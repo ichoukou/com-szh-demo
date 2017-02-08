@@ -1,4 +1,4 @@
-package main.java.com.szh.test;
+package com.szh.test;
 
 /**
  * Created by zhihaosong on 16-9-26.

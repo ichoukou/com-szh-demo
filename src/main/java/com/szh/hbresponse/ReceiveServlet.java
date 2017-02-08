@@ -1,4 +1,4 @@
-package main.java.com.szh.hbresponse;
+package com.szh.hbresponse;
 
 import java.io.*;
 import java.text.ParseException;

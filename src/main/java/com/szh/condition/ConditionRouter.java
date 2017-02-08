@@ -1,15 +1,17 @@
-package main.java.com.szh.condition;
+package com.szh.condition;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 /**
  * Created by yunbinan on 16-8-18.
  */
+
 public class ConditionRouter implements InitializingBean {
 
     private AbstractCondition header = null;
@@ -39,7 +41,7 @@ public class ConditionRouter implements InitializingBean {
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        if (header.judge(new String())) {
+        if (header.judge("sss", new ArrayList<String>())) {
             System.out.println("pass");
         } else {
             System.out.println("fail");
@@ -47,12 +49,12 @@ public class ConditionRouter implements InitializingBean {
     }
 
     public boolean startJudge(String sms) {
-        return header.judge(sms);
+        return header.judge(sms, new ArrayList<String>());
     }
 
     public static void main(String[] args) {
-        ApplicationContext cfg = new ClassPathXmlApplicationContext("spring-server.xml");
-        ConditionRouter conditionRouter = (ConditionRouter) cfg.getBean("ConditionRouter");
+        ApplicationContext cfg = new ClassPathXmlApplicationContext("main/resources/spring-server.xml");
+        ConditionRouter conditionRouter = cfg.getBean("conditionRouter", ConditionRouter.class);
     }
 
 }

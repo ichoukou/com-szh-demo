@@ -1,4 +1,4 @@
-package main.java.com.szh.util;
+package com.szh.util;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

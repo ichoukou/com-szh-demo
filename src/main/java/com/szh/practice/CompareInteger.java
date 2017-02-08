@@ -1,4 +1,4 @@
-package main.java.com.szh.practice;
+package com.szh.practice;
 
 /**
  * Created by zhihaosong on 16-6-27.

@@ -1,4 +1,4 @@
-package main.java.com.szh.threadTest;
+package com.szh.threadTest;
 
 /**
  * Created by zhihaosong on 16-11-23.

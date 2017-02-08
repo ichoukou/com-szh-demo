@@ -1,4 +1,4 @@
-package main.java.com.szh.httpClient;
+package com.szh.httpClient;
 
 import java.io.*;
 import java.util.ArrayList;

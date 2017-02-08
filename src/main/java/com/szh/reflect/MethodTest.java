@@ -1,4 +1,4 @@
-package main.java.com.szh.reflect;
+package com.szh.reflect;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;

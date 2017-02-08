@@ -1,4 +1,4 @@
-package main.java.com.szh.algorithm;
+package com.szh.algorithm;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +31,7 @@ public class quickSort {
             }
             a[low] = temp;
             int middle = low;
-            System.out.println(low);
+           // System.out.println(low);
             quickSort(a, low, middle - 1);
             quickSort(a, middle + 1, high);
         }
@@ -43,19 +43,12 @@ public class quickSort {
     }
 
     public static void main(String[] args) {
-     /*   int a[] = new int[]
+        int a[] = new int[]
                 {
                         34, 55, 78, 9, 2, 1, 44, 43, 1, 233
                 };
-        main.java.com.szh.algorithm.quickSort(a);
+        quickSort(a);
         for (int xx : a)
-            System.out.print(xx + "\t");*/
-        String content = "实施是否但是是的方式地方【是是是】实施地方【是神色】";
-        if (content.contains("】") && content.endsWith("】")) {
-            content = content.substring(0, content.lastIndexOf("【")) + "退订回Ｔ" + content.substring(content.lastIndexOf("【"));
-        } else {
-            content = content + "退订回Ｔ";
-        }
-        System.out.println(content);
+            System.out.print(xx + "\t");
     }
 }

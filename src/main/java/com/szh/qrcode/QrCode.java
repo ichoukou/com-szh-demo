@@ -1,4 +1,4 @@
-package main.java.com.szh.qrcode;
+package com.szh.qrcode;
 
 import java.io.*;
 import java.util.HashMap;

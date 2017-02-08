@@ -24,7 +24,7 @@
  * <http://www.apache.org/>.
  *
  */
-package main.java.com.szh.httpClient;
+package com.szh.httpClient;
 
 import java.io.File;
 

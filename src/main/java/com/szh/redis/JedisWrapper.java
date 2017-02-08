@@ -1,4 +1,4 @@
-package main.java.com.szh.redis;
+package com.szh.redis;
 
 import java.util.ArrayList;
 import java.util.List;

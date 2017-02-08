@@ -1,4 +1,4 @@
-package main.java.com.szh.util;
+package com.szh.util;
 
 import com.alibaba.fastjson.JSONObject;
 import com.dajie.receiver.client.SendCenterDataServiceContext;

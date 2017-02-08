@@ -1,4 +1,4 @@
-package main.java.com.szh.test;
+package com.szh.test;
 
 
 import java.io.File;

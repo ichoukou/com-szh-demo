@@ -1,4 +1,4 @@
-package main.java.com.szh.threadTest;
+package com.szh.threadTest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,4 +1,4 @@
-package main.java.com.szh.algorithm;
+package com.szh.algorithm;
 
 import java.util.ArrayList;
 import java.util.List;

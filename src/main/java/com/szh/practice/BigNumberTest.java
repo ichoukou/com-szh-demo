@@ -1,4 +1,4 @@
-package main.java.com.szh.practice;
+package com.szh.practice;
 
 import com.dajie.common.util.StringUtil;
 import org.apache.commons.codec.DecoderException;

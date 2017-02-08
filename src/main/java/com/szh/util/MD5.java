@@ -1,5 +1,4 @@
-package main.java.com.szh.util;
-
+package com.szh.util;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 

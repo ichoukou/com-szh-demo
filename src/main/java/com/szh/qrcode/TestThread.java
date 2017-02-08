@@ -1,4 +1,4 @@
-package main.java.com.szh.qrcode;
+package com.szh.qrcode;
 
 /**
  * Created by zhihaosong on 16-6-7.

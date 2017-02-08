@@ -1,4 +1,4 @@
-package main.java.com.szh.threadTest;
+package com.szh.threadTest;
 
 import java.util.HashMap;
 

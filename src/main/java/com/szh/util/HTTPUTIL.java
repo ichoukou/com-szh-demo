@@ -1,4 +1,4 @@
-package main.java.com.szh.util;
+package com.szh.util;
 
 import java.io.BufferedReader;
 import java.io.File;

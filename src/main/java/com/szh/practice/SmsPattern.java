@@ -1,4 +1,4 @@
-package main.java.com.szh.practice;
+package com.szh.practice;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

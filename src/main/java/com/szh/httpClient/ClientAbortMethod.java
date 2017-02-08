@@ -25,7 +25,7 @@
  *
  */
 
-package main.java.com.szh.httpClient;
+package com.szh.httpClient;
 
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;

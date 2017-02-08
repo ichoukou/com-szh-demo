@@ -1,4 +1,4 @@
-package main.java.com.szh.condition;
+package com.szh.condition;
 
 import org.springframework.stereotype.Component;
 

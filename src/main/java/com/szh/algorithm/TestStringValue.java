@@ -1,4 +1,4 @@
-package main.java.com.szh.algorithm;
+package com.szh.algorithm;
 
 import com.dajie.common.dubbo.util.StringUtil;
 
@@ -39,8 +39,6 @@ public class TestStringValue {
         failList.clear();
         System.out.println(list.toString()+"\n"+failList.toString());
 
-
-        //{"dest":"106907626666","src":"18681820417","content":"%E4%B8%AD%E6%96%87","date":"2016-09-23 11:11:22","msgId":"092310560101254864","ref":""}
         try {
             System.out.println(URLDecoder.decode("%E4%B8%AD%E6%96%87","UTF-8"));
         } catch (UnsupportedEncodingException e) {

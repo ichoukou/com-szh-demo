@@ -25,7 +25,7 @@
  *
  */
 
-package main.java.com.szh.httpClient;
+package com.szh.httpClient;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;

@@ -1,4 +1,4 @@
-package main.java.com.szh.hbresponse;
+package com.szh.hbresponse;
 
 /**
  * Created by zhihaosong on 16-11-30.
