@@ -26,16 +26,20 @@ public class MailmanagerTest {
 //url   UID   userName
 
 
-
         Map<String, String> map = new HashMap<String, String>();
 
-        map.put("userName", "姓名");
+        map.put("remindCount", "5");
+        map.put("applyURL","http://job.dajie.com/recruit/apply/index");
+        map.put("UID","24363846");
+        map.put("unreadCount","5");
+        map.put("resumeHandle","0");
+        map.put("userName","李志勇");
+        map.put("autoLoginURL","http://www.dajie.com/account/login?auth_str\u003df7fd0RZaZOCx0zPQIif7r9rY1X2jMwr2qpVL9Spe8S7hiB3Zng\u0026url\u003dhttp%3A%2F%2Fjob.dajie.com%2Frecruit%2Fapply%2Findex");
 
-        map.put("url", "https://www.dajie.com/home?f=inbound");
+        map.put("applyCount","5");
 
-        map.put(MailTplKeys.KEY_TO_UID, "34105731");
-        map.put(MailTplKeys.KEY_TO_EMAIL, "zhihao.song@dajie-inc.com");                         //收件人Email
-        map.put(MailTplKeys.KEY_TPL_VERSION_ID, "10269");                                      //邮件模板id
+        map.put(MailTplKeys.KEY_TO_EMAIL, "1049799275@qq.com");                         //收件人Email
+        map.put(MailTplKeys.KEY_TPL_VERSION_ID, "10247");                                      //邮件模板id
         boolean result = mailManagerService.sendEmail(map);
         boolean result1= mailManagerService.isOffLimit("zhihao.song@dajie-inc.com",10269);
         System.out.println(result);
