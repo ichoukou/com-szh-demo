@@ -1,0 +1,185 @@
+<@compress single_line=true>
+
+<body style="background:#e4e4e4">
+<div style="word-wrap: break-word;background:#e4e4e4">
+    <table cellpadding="0" cellspacing="0" width="480" border="0" align="center" height="10">
+        <tbody>
+        <tr>
+            <td width="10">&nbsp;</td>
+            <td style="font-size:24px;" align="left"><p style="margin:0; line-height:23px;">&nbsp;</p></td>
+            <td width="10" bgcolor="" align="left" style="">&nbsp;</td>
+        </tr>
+        </tbody>
+    </table>
+    <table cellpadding="0" cellspacing="0" width="480" border="0" align="center" bgcolor="#f3fbfd"
+           style="border-top:6px solid #0db6d7;">
+        <tbody>
+        <tr>
+            <td width="30" bgcolor="#f3fbfd" height="20">&nbsp;</td>
+            <td style="color:#333;font-size:16px;" align="center">
+            </td>
+            <td width="30" bgcolor="#f3fbfd" align="left" style="">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="30" bgcolor="#f3fbfd" height="20">&nbsp;</td>
+            <td style="color:#333;font-size:16px;" align="center">
+                <p style="margin:0; line-height:23px;">${UNAME}，您好！</p>
+            </td>
+            <td width="30" bgcolor="#f3fbfd" align="left" style="">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="30" bgcolor="#f3fbfd" height="20">&nbsp;</td>
+            <td style="color:#333;font-size:16px;" align="left">
+                <p style="margin:0; line-height:23px;">&nbsp;</p>
+
+                <p style="margin:0; line-height:23px;margin-left: 30px;">${HRNAME}刚看了您的职业档案，特地给您发来一份职位邀请，尽快确认吆！</p>
+            </td>
+            <td width="30" bgcolor="#f3fbfd" align="left" style="">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="30" bgcolor="#f3fbfd" height="20">&nbsp;</td>
+            <td style="color:#333;font-size:16px;line-height:20px;" align="left">
+                <br>
+
+                　　　
+                <#if jobName??&&jobSalarys??&&jobAddress??&&corpName??>
+                    <p style="margin:0; line-height:20px;text-align: left;margin-left: 30px;font-size: 14px;">职&emsp;&emsp;位：${jobName}
+                        　　　　　　　　</p>
+                    <p style="margin:0; line-height:20px;text-align: left;margin-left: 30px;font-size: 14px;">公&ensp;司&ensp;名：${corpName}
+                        　　　　　　　　</p>
+                    <p style="margin:0; line-height:20px;text-align: left;margin-left: 30px;font-size: 14px;">
+                        职位薪资：${jobSalarys}
+                        　　　　　　　　</p>
+                    <p style="margin:0; line-height:20px;text-align: left;margin-left: 30px;font-size: 14px;">
+                        工作地点：${jobAddress}
+                        　　　　　　　　</p>
+                </#if>
+            </td>
+
+            <td width="30" bgcolor="#f3fbfd" align="left" style="">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="30" bgcolor="#f3fbfd" height="20">&nbsp;</td>
+            <td style="color:#333;font-size:16px;" align="center">
+            </td>
+            <td width="30" bgcolor="#f3fbfd" align="left" style="">&nbsp;</td>
+        </tr>
+        </tbody>
+    </table>
+    <#assign t_email_encry=ENCRYPT_EMAIL(TO_EMAIL) />
+    <#assign t_domain=GET_DOMAIN(TO_EMAIL) />
+    <#assign t_category="new" />
+
+
+    <table cellpadding="0" cellspacing="0" width="480" border="0" align="center" style="" bgcolor="#ffffff">
+        <tbody>
+        <tr>
+            <td width="30" bgcolor="#ffffff" height="10">&nbsp;</td>
+            <td style="font-size:24px;" align="center" width="240">
+                <table cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>
+                            <#assign t_shorturl_interest=PLANK_URL('http://plank.dajie.com/redirect/toUrl?id=1',UID,
+                                    'm_track_type=click&m_to_uid=${UID}&m_serial_id=${s_MESSAGE_SERIAL_ID[0]}&m_category=${t_category}&m_tpl_id=${s_TPL_VERSION_ID}&m_email_encry=${t_email_encry}&m_domain=${t_domain}&m_send_date=${s_SEND_DATE}&m_mail_data_id=${s_MAIL_DATA_ID}',
+                                    'https://m.dajie.com/invitation/job/${invitationId}?action=interest&noAppTip=1&source=EMAIL',
+                                    'http://t.dajie.com/job/invitationletter/${invitationId}?source=EMAIL&noAppTip=1')/>
+                            <a href="${t_shorturl_interest}"
+                               style=" text-decoration: none; "><p
+                                    style="background:#0db6d7;border-radius:5px;color:#ffffff;font-size:14px;display:block;height:40px;line-height:40px;text-align:center;margin-bottom:0px;">
+                                &nbsp;&nbsp; &nbsp;&nbsp;考虑机会&nbsp;&nbsp; &nbsp;&nbsp;</p></a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td width="30" bgcolor="#ffffff" height="10">&nbsp;</td>
+        </tr>
+    </table>
+
+    <table cellpadding="0" cellspacing="0" width="480" height="20" border="0" align="center" style="" bgcolor="#ffffff">
+        <tbody>
+        <tr>
+            <td width="30" bgcolor="#ffffff" height="20">&nbsp;</td>
+            <td style="font-size:24px;" align="center" colspan="3">
+                <table cellpadding="0" cellspacing="0" align="center">
+                    <tr>
+                        <td>
+                            <#assign t_shorturl_accept=PLANK_URL('http://plank.dajie.com/redirect/toUrl?id=1',UID,'m_track_type=click&m_to_uid=${UID}&m_serial_id=${s_MESSAGE_SERIAL_ID[0]}&m_category=${t_category}&m_tpl_id=${s_TPL_VERSION_ID}&m_email_encry=${t_email_encry}&m_domain=${t_domain}&m_send_date=${s_SEND_DATE}&m_mail_data_id=${s_MAIL_DATA_ID}',
+                                    'https://m.dajie.com/invitation/job/${invitationId}?action=autoApply&noAppTip=1&source=EMAIL',
+                                    'https://t.dajie.com/job/invitationletter/accept/${invitationId}?code=${invitationIdCode}&noAppTip=1&source=EMAIL')/>
+                            <a href="${t_shorturl_accept}"
+                               style=" text-decoration: none; "><p
+                                    style="border-radius:5px;color:#0db6d7;font-size:14px;display:block;height:20px;line-height:20px;text-align:center;">
+                                &nbsp;立即投递</p></a>
+                        </td>
+                        <td width="20" bgcolor="#ffffff" align="center" height="20"
+                            style="color:#c3c3c3;font-size:14px;text-align:center;">|
+                        </td>
+                        <td>
+                            <#assign  t_shorturl_look=PLANK_URL('http://plank.dajie.com/redirect/toUrl?id=1',UID,'m_track_type=click&m_to_uid=${UID}&m_serial_id=${s_MESSAGE_SERIAL_ID[0]}&m_category=${t_category}&m_tpl_id=${s_TPL_VERSION_ID}&m_email_encry=${t_email_encry}&m_domain=${t_domain}&m_send_date=${s_SEND_DATE}&m_mail_data_id=${s_MAIL_DATA_ID}',
+                                    'https://m.dajie.com/invitation/job/${invitationId}?noAppTip=1&source=EMAIL',
+                                    'http://t.dajie.com/job/invitationletter/${invitationId}?source=EMAIL&noAppTip=1')/>
+
+                            <a href="${t_shorturl_look}" style=" text-decoration: none;">
+                                <p style="border-radius:5px;color:#0db6d7;font-size:14px;display:block;height:20px;line-height:20px;text-align:center;">
+                                    查看详情&nbsp;</p>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td width="30" bgcolor="#ffffff" align="left" style="" height="20">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="30" bgcolor="#ffffff" height="10" >&nbsp;</td>
+            <td style="font-size:24px;" align="left" colspan="3"><p
+                    style="color:#999;font-size:12px;line-height:20px;"> 在大街网，白领接受邀请后签约入职率高达87%，祝您成功！</p>
+            </td>
+            <td width="30" bgcolor="#ffffff" align="left" style="">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="30" bgcolor="#fff" height="20">&nbsp;</td>
+            <td style="color:#333;font-size:16px;" align="center"></td>
+            <td width="30" bgcolor="#fff" align="left" style="">&nbsp;</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table cellpadding="0" cellspacing="0" width="480" border="0" align="center" style="" bgcolor="#e4e4e4">
+        <tbody>
+        <tr>
+            <td width="10" bgcolor="#e4e4e4" height="30">&nbsp;</td>
+            <td align="left" style="border-top:1px solid #ececec;font-size:12px;color:#a8a8a8;line-height:35px">
+                <#assign t_loginurl_unsubscribe=UNSUB("to_email=${TO_EMAIL}&m_to_uid=${UID}&m_serial_id=${s_MESSAGE_SERIAL_ID[0]}&m_tpl_id=${s_TPL_VERSION_ID}&m_category=newfun") />
+                <span>@2017 内部邮件&nbsp;<em style="color:#a8a8a8;font-style: normal;">|</em>&nbsp;<a
+                        href="${t_loginurl_unsubscribe}" style=" text-decoration: none;">邮件退订</a></span>
+                <p style="margin:0; line-height:23px;">&nbsp;</p>
+            </td>
+            <td width="10" bgcolor="#e4e4e4" align="left" style="">&nbsp;</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table cellpadding="0" cellspacing="0" width="480" border="0" align="center" height
+            ="110">
+        <tbody>
+        <tr>
+            <td width="10">&nbsp;</td>
+            <td style="font-size:24px;" align="left">
+                <p style="margin:0; line-height:23px;">&nbsp;</p>
+            </td>
+            <td width="10" bgcolor="" align="left" style="">&nbsp;</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+<#assign t_serialId="" />
+<#list s_MESSAGE_SERIAL_ID as id>
+    <#assign t_serialId=t_serialId + id/>
+    <#if id_has_next>
+        <#assign t_serialId=t_serialId + ","/>
+    </#if>
+</#list>
+<img width="0" height="0"
+     src="http://edm.dajie.com/shorturl?m_track_type=pv&m_to_uid=${UID}&m_serial_id=${s_MESSAGE_SERIAL_ID[0]}&m_tpl_id=${s_TPL_VERSION_ID}&m_send_date=${s_SEND_DATE}&m_mail_data_id=${s_MAIL_DATA_ID}"/>
+</@compress>

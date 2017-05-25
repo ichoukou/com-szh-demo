@@ -3,11 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>com.dajie</groupId>
-        <artifactId>dj-base-parent</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
-    </parent>
+
     <groupId>com-szh-demo</groupId>
     <artifactId>com-szh-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -203,7 +199,7 @@
         <dependency>
             <groupId>com.dajie</groupId>
             <artifactId>dj-pt-mailmanager-api</artifactId>
-            <version>1.0.4-SNAPSHOT</version>
+            <version>1.0.5-SNAPSHOT</version>
         </dependency>
 
         <dependency>
@@ -240,7 +236,16 @@
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
 
-
+        <dependency>
+            <groupId>com.dajie</groupId>
+            <artifactId>dj-sms-client</artifactId>
+            <version>1.0.5</version>
+        </dependency>
+        <dependency>
+            <groupId>com.dajie</groupId>
+            <artifactId>dj-sms-api</artifactId>
+            <version>1.0.8-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
@@ -323,6 +328,28 @@
                 </exclusion>
             </exclusions>
         </dependency>-->
+
+
+        <!-- https://mvnrepository.com/artifact/commons-httpclient/commons-httpclient -->
+        <dependency>
+            <groupId>commons-httpclient</groupId>
+            <artifactId>commons-httpclient</artifactId>
+            <version>3.1</version>
+        </dependency>
+        <!--MD5加密start -->
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.9</version>
+        </dependency>
+        <!--MD5加密end -->
+
+        <dependency>
+            <groupId>org.jboss.aesh</groupId>
+            <artifactId>aesh</artifactId>
+            <version>0.66.3</version>
+        </dependency>
+
     </dependencies>
 
 </project>

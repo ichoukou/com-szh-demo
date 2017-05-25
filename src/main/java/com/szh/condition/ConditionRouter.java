@@ -53,8 +53,17 @@ public class ConditionRouter implements InitializingBean {
     }
 
     public static void main(String[] args) {
-        ApplicationContext cfg = new ClassPathXmlApplicationContext("main/resources/spring-server.xml");
-        ConditionRouter conditionRouter = cfg.getBean("conditionRouter", ConditionRouter.class);
+        //  ApplicationContext cfg = new ClassPathXmlApplicationContext("spring-server.xml");
+        //  ConditionRouter conditionRouter = cfg.getBean("conditionRouter", ConditionRouter.class);
+        AbstractCondition aaa = new BCondition() {
+            @Override
+            public boolean isPass(String request) {
+                return false;
+            }
+        };
+
+        aaa.song();
+
     }
 
 }

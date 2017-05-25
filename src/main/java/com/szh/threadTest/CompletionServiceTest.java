@@ -17,10 +17,9 @@ public class CompletionServiceTest {
             this.i = i;
         }
 
-        @Override
         public String call() throws Exception {
             //Thread.sleep(10000);
-            return Thread.currentThread().getName() + "执行完任务：" + i+"\t"+nums[i];
+            return Thread.currentThread().getName() + "执行完任务：" + i + "\t" + nums[i];
         }
     }
 

@@ -16,6 +16,7 @@ public abstract class AbstractCondition {
 
     public boolean judge(String request, List<String> info) {
         try {
+            song();
             long start = System.nanoTime();
             boolean result = isPass(request);
             info.add(this.getClass().getSimpleName() + "(" + (System.nanoTime() - start) + ")");
@@ -39,6 +40,10 @@ public abstract class AbstractCondition {
 
     public AbstractCondition getNextCondition() {
         return nextCondition;
+    }
+
+    public void song() {
+        System.out.println("我是partent");
     }
 
     public void setNextCondition(AbstractCondition nextCondition) {

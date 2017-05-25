@@ -12,6 +12,9 @@ public class ACondition extends AbstractCondition {
         return true;
     }
 
+    public void song() {
+        System.out.println("我是a son");
+    }
     public ACondition() {
         System.out.println("A construction");
     }
