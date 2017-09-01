@@ -19,7 +19,6 @@ public class Counter {
     public static void main(String[] args) {
         for (int i = 0; i < 1000; i++) {
             new Thread(new Thread(new Runnable() {
-                @Override
                 public void run() {
                     Counter.count.getAndIncrement();
                 }

@@ -37,54 +37,54 @@
 
     <build>
         <defaultGoal>package</defaultGoal>
-        <filters>
-            <filter>src/main/filters/filter_mail_${project.environment}.properties</filter>
-        </filters>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-                <includes>
-                    <include>**/*.*</include>
-                </includes>
-                <targetPath>${project.build.directory}/classes</targetPath>
-            </resource>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-                <includes>
-                    <include>*/*.*</include>
-                </includes>
-                <targetPath>${project.build.directory}/classes</targetPath>
-            </resource>
-        </resources>
+        <!-- <filters>
+             <filter>src/main/filters/filter_mail_${project.environment}.properties</filter>
+         </filters>
+         <resources>
+             <resource>
+                 <directory>src/main/resources</directory>
+                 <filtering>true</filtering>
+                 <includes>
+                     <include>**/*.*</include>
+                 </includes>
+                 <targetPath>${project.build.directory}/classes</targetPath>
+             </resource>
+             <resource>
+                 <directory>src/main/resources</directory>
+                 <filtering>true</filtering>
+                 <includes>
+                     <include>*/*.*</include>
+                 </includes>
+                 <targetPath>${project.build.directory}/classes</targetPath>
+             </resource>
+         </resources>-->
 
-      <!--  <plugins>
-            <plugin>
-                <groupId>com.dajie</groupId>
-                <artifactId>dj-validate-maven-plugin</artifactId>
-                <version>1.0.2-SNAPSHOT</version>
-                <executions>
-                    <execution>
-                        <id>dajie-maven-validate</id>
-                        <phase>none</phase>
-                        <goals>
-                            <goal>dajie-validate</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
-                <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                </configuration>
-            </plugin>
+        <!--  <plugins>
+              <plugin>
+                  <groupId>com.dajie</groupId>
+                  <artifactId>dj-validate-maven-plugin</artifactId>
+                  <version>1.0.2-SNAPSHOT</version>
+                  <executions>
+                      <execution>
+                          <id>dajie-maven-validate</id>
+                          <phase>none</phase>
+                          <goals>
+                              <goal>dajie-validate</goal>
+                          </goals>
+                      </execution>
+                  </executions>
+              </plugin>
+              <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-compiler-plugin</artifactId>
+                  <version>2.3.2</version>
+                  <configuration>
+                      <source>1.6</source>
+                      <target>1.6</target>
+                  </configuration>
+              </plugin>
 
-        </plugins>-->
+          </plugins>-->
 
     </build>
     <dependencies>
@@ -199,7 +199,7 @@
         <dependency>
             <groupId>com.dajie</groupId>
             <artifactId>dj-pt-mailmanager-api</artifactId>
-            <version>1.0.5-SNAPSHOT</version>
+            <version>1.0.6-SNAPSHOT</version>
         </dependency>
 
         <dependency>
@@ -244,7 +244,7 @@
         <dependency>
             <groupId>com.dajie</groupId>
             <artifactId>dj-sms-api</artifactId>
-            <version>1.0.8-SNAPSHOT</version>
+            <version>1.1.4-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>log4j</groupId>
@@ -256,7 +256,6 @@
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.6.1</version>
         </dependency>
-
 
 
         <dependency>
@@ -308,29 +307,6 @@
             <artifactId>commons-logging</artifactId>
             <version>1.2</version>
         </dependency>
-
-       <!-- <dependency>
-            <groupId>com.dajie</groupId>
-            <artifactId>dj-framework-cache</artifactId>
-            <version>1.3.07</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>log4j</groupId>
-                    <artifactId>log4j</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-log4j12</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-api</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>-->
-
-
-        <!-- https://mvnrepository.com/artifact/commons-httpclient/commons-httpclient -->
         <dependency>
             <groupId>commons-httpclient</groupId>
             <artifactId>commons-httpclient</artifactId>
@@ -343,13 +319,45 @@
             <version>1.9</version>
         </dependency>
         <!--MD5加密end -->
-
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.19</version>
+        </dependency>
         <dependency>
             <groupId>org.jboss.aesh</groupId>
             <artifactId>aesh</artifactId>
             <version>0.66.3</version>
         </dependency>
+        <dependency>
+            <groupId>com.dajie</groupId>
+            <artifactId>dj-pt-sms-queue</artifactId>
+            <version>1.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+            <version>3.5.1-alpha</version>
+        </dependency>
+        <dependency>
 
+            <groupId>com.dajie</groupId>
+
+            <artifactId>dj-guanke-mess-api</artifactId>
+
+            <version>1.0.3-SNAPSHOT</version>
+
+        </dependency>
+
+        <dependency>
+
+            <groupId>com.dajie</groupId>
+
+            <artifactId>dj-guanke-mess-client</artifactId>
+
+            <version>1.0.3-SNAPSHOT</version>
+
+        </dependency>
     </dependencies>
 
 </project>

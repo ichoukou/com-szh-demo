@@ -127,7 +127,7 @@ public class test {
     }
 
     public static void main(String[] args) {
-        Collections.synchronizedList(new ArrayList<Object>());
+       /* Collections.synchronizedList(new ArrayList<Object>());
         Map<String, String> para = new HashMap<String, String>();
         String content = "亲爱的宋先生，你住址附近正在招优质管理岗位很适合你，薪资高于你的预期。点击： URL{https://www.dajie.com} 查看【坏男孩】";
         updateShortUrl(content, para);
@@ -149,7 +149,19 @@ public class test {
             System.out.println(URLDecoder.decode("%B4%F3%BD%D6%CD%F8%D7%A2%B2%E1%D1%E9%D6%A4%C2%EB473013%A3%AC10%B7%D6%D6%D3%C4%DA%D3%D0%D0%A7%A1%A3%A1%BE%B4%F3%BD%D6%CD%F8%A1%BF","GBK"));
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
+        }*/
+        Random random = new Random();
+        int[] ii = new int[10];
+        for (int i = 0; i < 200000; i++) {
+            int aaa = random.nextInt(100);
+            if (aaa < 10)
+                ii[aaa]++;
         }
+        for (int i = 0; i <10 ; i++) {
+            System.out.println(ii[i]);
+        }
+
+
 
     }
 }

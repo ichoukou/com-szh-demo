@@ -1,0 +1,104 @@
+package com.szh.dashboard;
+
+import com.alibaba.dubbo.common.logger.Logger;
+import com.alibaba.dubbo.common.logger.LoggerFactory;
+
+import java.io.InputStream;
+import java.net.URL;
+import java.util.Enumeration;
+import java.util.Map;
+import java.util.Properties;
+import java.util.concurrent.ConcurrentHashMap;
+
+/**
+ * create by zhihaosong at 2017-06-09
+ */
+
+public class AppConfigs {
+    private static Logger log = LoggerFactory.getLogger("AppConfigs");
+    private static AppConfigs instance;
+    private Map<String, String> configs;
+    public final static String configFile = "database.properties";
+    private static final Object lock = new Object();
+    private static boolean initDone = false;
+
+    private AppConfigs() {
+    }
+
+    public static AppConfigs getInstance() {
+        if (instance == null) {
+            synchronized (lock) {
+                if (instance == null) {
+                    instance = new AppConfigs();
+                    instance.init();
+                    initDone = true;
+                }
+            }
+        }
+        return instance;
+    }
+
+    public synchronized void reload() {
+        Map<String, String> configsTemp = new ConcurrentHashMap<String, String>();
+        log.debug("reload AppConfigs");
+        Properties props = new Properties();
+        try {
+            URL url = this.getClass().getClassLoader().getResource(configFile);
+            InputStream in = url.openStream();
+            props.load(in);
+            Enumeration<?> en = props.propertyNames();
+            while (en.hasMoreElements()) {
+                String key = (String) en.nextElement();
+                String value = props.getProperty(key);
+                configsTemp.put(key, value);
+            }
+        } catch (Exception e) {
+            log.error("reload AppConfigs error:" + e.getMessage());
+            return;
+        }
+        configs = configsTemp;
+    }
+
+    public void init() {
+        if (initDone) {
+            return;
+        }
+        log.debug("init AppConfigs");
+        Properties props = new Properties();
+        try {
+            URL url = this.getClass().getClassLoader().getResource(configFile);
+            InputStream in = url.openStream();
+            props.load(in);
+            Enumeration<?> en = props.propertyNames();
+            configs = new ConcurrentHashMap<String, String>();
+            while (en.hasMoreElements()) {
+                String key = (String) en.nextElement();
+                String value = props.getProperty(key);
+                configs.put(key, value);
+            }
+        } catch (Exception e) {
+            log.error("init AppConfigs error:" + e.getMessage());
+        }
+    }
+
+    public Map<String, String> getConfigs() {
+        return configs;
+    }
+
+    public String get(String key) {
+        return configs.get(key);
+    }
+
+    public String get(String key, String defaultStr) {
+        String result = configs.get(key);
+        if (result == null) {
+            result = defaultStr;
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        URL url = AppConfigs.class.getClassLoader().getResource(configFile);
+        System.out.println(url.getPath());
+    }
+}

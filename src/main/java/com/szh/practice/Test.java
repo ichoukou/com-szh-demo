@@ -13,7 +13,7 @@ import java.util.Map;
  * Created by zhihaosong on 17-3-23.
  */
 public class Test {
-    public static void main(String[] args) {
+    public void masin(String[] args) {
         List<Map<String, String>> datas = new ArrayList();
         Map<String, String> map1 = new HashMap<String, String>();
         map1.put("UID", "100706839");
@@ -37,10 +37,23 @@ public class Test {
         //  String result = smsService.sendSMSBatch(datas);
 
 
-
         String aa = "a" + "b" + "c";
         System.out.println(aa);
 
 
     }
+
+    public static void dealArray(String aaa, int... intArray) {
+        for (int i : intArray)
+            System.out.print(i + " ");
+
+        System.out.println(aaa);
+    }
+
+    public static void main(String[] args) {
+        dealArray("sss");
+        dealArray("sss", 22);
+        dealArray("sfsf", 1, 2, 3);
+    }
+
 }

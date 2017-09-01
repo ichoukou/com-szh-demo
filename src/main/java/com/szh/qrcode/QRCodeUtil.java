@@ -31,10 +31,16 @@ public class QRCodeUtil {
     }
 
     public static void main(String[] args) throws IOException, WriterException {
-        InputStream inputStream = new FileInputStream(new File("/home/zhihaosong/workspace/com-szh-demo/src/main/java/com/szh/qrcode/wangjinrong.png"));
+        InputStream inputStream = new FileInputStream(
+                new File("/home/zhihaosong/workspace/com-szh-demo/src/main/java/com/szh/qrcode/liantu.png")
+        );
         // createQRCode("http://www.dajie.com?key=ksinak", 300, 300);
-        System.out.println(inputStream);
-        UploadReturnModel model = FileUploadService.uploadFromStream(inputStream, "test.jpg", FileSavedType.common_image);
-        System.out.println();
+        try {
+            System.out.println(inputStream);
+            UploadReturnModel model = FileUploadService.uploadFromStream(inputStream, "qrcode111.png", FileSavedType.common_image);
+            System.out.println(model.getLocalUrl());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
